@@ -37,8 +37,9 @@ public class Main {
         response = "HTTP/1.1 200 OK\r\n\r\n";
       }
 
-      else if(pathURL.startsWith("/echo/")){
+      else if(pathURL.startsWith("/echo")){
         responseBody = pathURL.split("/")[2];
+        response = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: " + responseBody.length() + "\r\n\r\n" + responseBody;
       }
       else{
         response = "HTTP/1.1 404 Not Found\r\n\r\n";
