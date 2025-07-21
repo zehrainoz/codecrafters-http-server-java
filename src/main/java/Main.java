@@ -30,10 +30,15 @@ public class Main {
       String pathURL = requestLine[1];
 
       OutputStream outputStream = clientSocket.getOutputStream();
-      String response;
+      String response = null;
+      String responseBody = null;
 
       if(pathURL.equals("/")){
         response = "HTTP/1.1 200 OK\r\n\r\n";
+      }
+
+      else if(pathURL.startsWith("/echo/")){
+        responseBody = pathURL.split("/")[2];
       }
       else{
         response = "HTTP/1.1 404 Not Found\r\n\r\n";
