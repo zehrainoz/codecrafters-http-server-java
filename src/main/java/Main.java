@@ -26,7 +26,7 @@ public class Main {
 
       //Divide request line to get URL path
       String[] requestLine = requestParts[0].split(" ");
-      
+
       String pathURL = requestLine[1];
 
       OutputStream outputStream = clientSocket.getOutputStream();
